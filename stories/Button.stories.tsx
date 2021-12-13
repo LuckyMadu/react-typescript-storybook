@@ -5,10 +5,25 @@ import { Button, Props } from '../src/Button';
 const meta: Meta = {
   title: 'Button',
   component: Button,
+  argTypes: {
+    onClick: {
+      action: 'clicked',
+    },
+    children: {
+      defaultValue: 'Default Text',
+    },
+  },
 };
 
 export default meta;
 
-export const Default = () => <Button variant="primary">CLICK ME</Button>;
+const Template: Story<Props> = (args) => <Button {...args} />;
 
-export const Secondary = () => <Button variant="secondary">CLICK ME</Button>;
+export const Default = Template.bind({});
+
+export const Secondary = Template.bind({});
+
+Secondary.args = {
+  variant: 'secondary',
+  children: 'I am secondary',
+};
