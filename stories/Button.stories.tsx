@@ -1,5 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { Button, Props } from '../src/Button';
 
 const meta: Meta = {
@@ -26,4 +27,5 @@ export const Secondary = Template.bind({});
 Secondary.args = {
   variant: 'secondary',
   children: 'I am secondary',
+  onClick: action('secondary click'),
 };
